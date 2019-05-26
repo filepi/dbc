@@ -6,21 +6,19 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import pageObject.BasePage;
-import pageObject.CustomerAddPage;
-import pageObject.CustomerListPage;
+import pages.BasePage;
+import pages.CustomerAddPage;
+import pages.CustomerListPage;
 
 public class CustomerTests {
-	
+
 	@BeforeClass
-	public static void init()
-	{
+	public static void init() {
 		BasePage.initializeBrowser();
 	}
-	
+
 	@Test
-	public void createCustomer()
-	{		
+	public void createAndDeleteCustomer() {
 		CustomerListPage customerListPage = new CustomerListPage();
 		CustomerAddPage customerAddPage = new CustomerAddPage();
 		customerListPage.changeComboboxToV4();
@@ -39,14 +37,20 @@ public class CustomerTests {
 		customerAddPage.set_employeer("Fixter");
 		customerAddPage.set_creditLimit("200");
 		customerAddPage.save();
-		BasePage.waitForVisibility("report-success", 2);
+		BasePage.waitForVisibilityById("report-success", 2);
 		String confirmationMessage = customerAddPage.getElementById("report-success").getText();
 		assertTrue(confirmationMessage.contains("Your data has been successfully stored into the database."));
+		customerAddPage.clickGoBackToList();
+		//customerListPage.clickSearchButton();
+		//customerListPage.typeSearchButton("Teste");
+		customerListPage.selectItem2();
+		customerListPage.deleteRow();
+		customerListPage.deleteConfirmation();
+
 	}
-	
+
 	@AfterClass
-	public static void close() 
-	{
-		BasePage.closeBrowser();
+	public static void close() {
+		//BasePage.closeBrowser();
 	}
 }
