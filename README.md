@@ -5,11 +5,11 @@ This project is part of a technical challenge for DBC company.
 Basically the code is responsible for create a data and then delete it, making asserts during this process.
 
 ## Libraries
-It was implemented  using selenium web driver, JUnit and Maven.
+It was implemented using selenium web driver, JUnit and Maven.
 
 ## Executing the tests
 1. Open the file "Challenge1 or "Challenge2"
-2. Click in  <Run> button in Eclipse to execute the automated test case.
+2. Click in "Run" button in Eclipse to execute the automated test case.
 
 or
 
