@@ -11,11 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import util.Common;
-
 public class BasePage {
 	
 private static  WebDriver _driver;
+public final String MAIN_URL = "https://www.grocerycrud.com/demo/bootstrap_theme";
 	
 	public WebDriver getDriver() 
 	{
@@ -30,7 +29,7 @@ private static  WebDriver _driver;
 	{
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 		_driver = new ChromeDriver();
-		_driver.get(Common.MAIN_URL);
+		_driver.get(MAIN_URL);
 		_driver.manage().window().maximize();
 	}
 	
