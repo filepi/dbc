@@ -14,17 +14,17 @@ public class Challenge1 {
 	CustomerAddPage customerAddPage = new CustomerAddPage();
 	
 	@After
-	public void closeSession()
+	public void finalizeTest()
 	{
 		new BasePage().closeBrowser();		
 	}
 	
 	@Test
-	public void challenge1createCustomer() {
-		customerListPage.changeComboboxToV4();
+	public void createCustomer() {
+		customerListPage.setBootstrapVersionToV4();
 		customerListPage.clickAddCustomer();
 		customerAddPage.createDefaultCustomer();
-		customerAddPage.save();
+		customerAddPage.clickSave();
 		assertTrue(customerAddPage.verifySuccessfullMessageIs("Your data has been successfully stored into the database."));
 	}
 }

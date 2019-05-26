@@ -9,50 +9,50 @@ import org.openqa.selenium.interactions.Actions;
 public class CustomerListPage extends BasePage{
 
 	WebDriver driver 					=  getDriver();
-	private String addCustomer 			= "Add Customer";
-	private String searchIconClass  	= "search-button";
-	private String searchInputClass  	= "search-input";
-	private String checkboxSelectClass  = "select-row";
-	private String deleteRowClass  		= "delete-selected-button";
-	private String deleteConfirmClass	= "delete-multiple-confirmation-button";
+	private String _addCustomer 		= "Add Customer";
+	private String _searchIconClass  	= "search-button";
+	private String _searchInputClass  	= "search-input";
+	private String _checkboxSelectClass = "select-row";
+	private String _deleteRowClass  	= "delete-selected-button";
+	private String _deleteConfirmClass	= "delete-multiple-confirmation-button";
 	
-	public void changeComboboxToV4()
+	public void setBootstrapVersionToV4()
 	{
 		selectByIndex(getElementById("switch-version-select"));
 	}
 	
 	public void clickAddCustomer()
 	{
-		clickLinkByText(addCustomer);
+		clickLinkByText(_addCustomer);
 	}
 	
 	public void clickSearchButton() {
-		waitForVisibilityByClassName(searchIconClass, 3);
-		driver.findElement(By.className(searchIconClass)).click();
+		waitForVisibilityByClassName(_searchIconClass, 3);
+		driver.findElement(By.className(_searchIconClass)).click();
 	}
 	
 	public void typeSearchButton(String text) {
-		waitForVisibilityByClassName(searchInputClass, 3);
-		WebElement searchButton = getElementByClassName(searchInputClass);
+		waitForVisibilityByClassName(_searchInputClass, 3);
+		WebElement searchButton = getElementByClassName(_searchInputClass);
 		searchButton.sendKeys(text);
 		searchButton.sendKeys(Keys.ENTER);
 	}
 
 	public void selectItem() {
 		sleep(2);
-		waitForVisibilityByClassName(checkboxSelectClass, 3);
-		WebElement element = getElementByClassName(checkboxSelectClass);
+		waitForVisibilityByClassName(_checkboxSelectClass, 3);
+		WebElement element = getElementByClassName(_checkboxSelectClass);
 		Actions act = new Actions(driver);
 		act.moveToElement(element).click();
 		element.click();
 	}
 
-	public void deleteRow() {
-		getElementByClassName(deleteRowClass).click();
+	public void clickDeleteButton() {
+		getElementByClassName(_deleteRowClass).click();
 	}
 	
-	public void deleteConfirmation() {
-		getElementByClassName(deleteConfirmClass).click();;
+	public void confirmDelete() {
+		getElementByClassName(_deleteConfirmClass).click();;
 	}
 	
 	public boolean verifyConfirmationDeleteMessageIs(String message) {

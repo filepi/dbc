@@ -13,8 +13,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	
-private static  WebDriver _driver;
+private static WebDriver _driver;
 public final String MAIN_URL = "https://www.grocerycrud.com/demo/bootstrap_theme";
+	
 	
 	public WebDriver getDriver() 
 	{

@@ -19,7 +19,7 @@ public class CustomerAddPage extends BasePage{
 	private String _employeerXPath 		= "/html/body/div[2]/div/div/div/div[2]/form/div[11]/div/div/div/div/input";
 	private String _creditLimitId 		= "field-creditLimit";
 	private String _btnSaveId 			= "form-button-save";
-	private String goBackToList			= "Go back to list";
+	private String _goBackToList		= "Go back to list";
 	
 	WebDriver driver = getDriver();
 
@@ -74,13 +74,13 @@ public class CustomerAddPage extends BasePage{
 		type(_creditLimitId, value);
 	}
 
-	public void save() {
+	public void clickSave() {
 		getElementById(_btnSaveId).click();
 	}
 
 	public void clickGoBackToList()
 	{
-		clickLinkByText(goBackToList);
+		clickLinkByText(_goBackToList);
 	}
 
 	public void createDefaultCustomer() {

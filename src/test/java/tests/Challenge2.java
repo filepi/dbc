@@ -18,24 +18,24 @@ public class Challenge2 {
 	@Before
 	public void preCondition() 
 	{
-		new Challenge1().challenge1createCustomer();		
+		new Challenge1().createCustomer();		
 	}
 	
 	@After
-	public void closeSession()
+	public void finalizeTest()
 	{
 		new BasePage().closeBrowser();		
 	}
 	
 	@Test
-	public void challenge2createAndDeleteCustomer() {
+	public void createAndDeleteCustomer() {
 		customerAddPage.clickGoBackToList();
 		customerListPage.clickSearchButton();
 		customerListPage.typeSearchButton("Teste");
 		customerListPage.selectItem();
-		customerListPage.deleteRow();
+		customerListPage.clickDeleteButton();
 		assertTrue(customerListPage.verifyConfirmationDeleteMessageIs("Are you sure that you want to delete this 1 item?"));		
-		customerListPage.deleteConfirmation();
+		customerListPage.confirmDelete();
 		assertTrue(customerListPage.verifyDeleteMessageIs("Your data has been successfully deleted from the database."));
 	}
 
