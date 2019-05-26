@@ -10,7 +10,9 @@ It was implemented  using selenium web driver, JUnit and Maven.
 ## Executing the tests
 1. Open the file "Challenge1 or "Challenge2"
 2. Click in  <Run> button in Eclipse to execute the automated test case.
-  or
+
+or
+
 1. Right click on one the files mentioned in step 1
 2. Click in "Run As"
 3. Click in "JUnit"
