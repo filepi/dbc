@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class CustomerListPage extends BasePage{
 
-	WebDriver driver 					= BasePage.getDriver();
+	WebDriver driver 					=  getDriver();
 	private String addCustomer 			= "Add Customer";
 	private String searchIconClass  	= "search-button";
 	private String searchInputClass  	= "search-input";

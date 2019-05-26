@@ -24,7 +24,7 @@ public class Challenge2 {
 	@After
 	public void closeSession()
 	{
-		BasePage.closeBrowser();		
+		new BasePage().closeBrowser();		
 	}
 	
 	@Test

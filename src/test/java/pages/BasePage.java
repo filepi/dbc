@@ -15,9 +15,9 @@ import util.Common;
 
 public class BasePage {
 	
-private static WebDriver _driver;
+private static  WebDriver _driver;
 	
-	public static WebDriver getDriver() 
+	public WebDriver getDriver() 
 	{
 		if (_driver == null) 
 		{
@@ -26,7 +26,7 @@ private static WebDriver _driver;
 		return _driver;
 	}
 	
-	public static void initializeBrowser()
+	public void initializeBrowser()
 	{
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 		_driver = new ChromeDriver();
@@ -34,7 +34,7 @@ private static WebDriver _driver;
 		_driver.manage().window().maximize();
 	}
 	
-	public static void closeBrowser()
+	public void closeBrowser()
 	{
 		getDriver().close();
 	}
@@ -79,18 +79,18 @@ private static WebDriver _driver;
 	    selectElement.selectByIndex(1);
 	}
 	
-	public static void scrollDown()
+	public void scrollDown()
 	{
 		JavascriptExecutor jse = (JavascriptExecutor) getDriver();
 		jse.executeScript("window.scrollBy(0,250)", "");
 	}
 
-	public static void waitForVisibilityById(String elementId, int time) {
+	public void waitForVisibilityById(String elementId, int time) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), time);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(elementId)));		
 	}
 	
-	public static void waitForVisibilityByClassName(String className, int time) {
+	public void waitForVisibilityByClassName(String className, int time) {
 		WebDriverWait wait = new WebDriverWait(getDriver(), time);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(className)));
 	}

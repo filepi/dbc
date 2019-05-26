@@ -21,7 +21,7 @@ public class CustomerAddPage extends BasePage{
 	private String _btnSaveId 			= "form-button-save";
 	private String goBackToList			= "Go back to list";
 	
-	WebDriver driver = BasePage.getDriver();
+	WebDriver driver = getDriver();
 
 	public void set_customerName(String value) {
 		type(_customerNameId, value);
